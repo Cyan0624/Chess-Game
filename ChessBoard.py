@@ -9,8 +9,23 @@ Vertical = 608
 Num_of_blocks = 8
 
 main =tk.Tk()
-main.title("main - ChessGame")
+main.title("Main - ChessGame")
 main.geometry(str(Horizontal)+"x"+str(Vertical))
+main.configure(bg = "#ffffff")
+canvas = tk.Canvas(
+    main,
+    bg = "#ffffff",
+    height = 608,
+    width = 608,
+    bd = 0,
+    highlightthickness = 0,
+    relief = "ridge")
+canvas.place(x = 0, y = 0)
+
+background_img = ImageTk.PhotoImage(Image.open("Rabbit.jpg").resize((608,608), Image.ANTIALIAS))
+background = canvas.create_image(
+    304, 304,
+    image=background_img)
 main.resizable(True, True)
 label = tk.Label(text = "CHESS", font=("맑은 고딕",40))
 label.pack()
