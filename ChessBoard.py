@@ -4,7 +4,6 @@ import Move
 from PIL import Image,ImageTk
 
 Horizontal = 608
-Horizontal_List = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 Vertical = 608
 
 Num_of_blocks = 8
