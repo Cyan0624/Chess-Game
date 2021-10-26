@@ -22,17 +22,15 @@ canvas = tk.Canvas(
     relief = "ridge")
 canvas.place(x = 0, y = 0)
 
-background_img = ImageTk.PhotoImage(Image.open("Rabbit.jpg").resize((608,608), Image.ANTIALIAS))
+background_img = ImageTk.PhotoImage(Image.open("CT1.jpg").resize((608,608), Image.ANTIALIAS))
 background = canvas.create_image(
     304, 304,
     image=background_img)
 main.resizable(True, True)
-label = tk.Label(text = "CHESS", font=("맑은 고딕",40))
-label.pack()
-BTNAI = tk.Button(text = "AI", command= lambda: [main.destroy()])
-BTNMU = tk.Button(text = "MULTI", command = lambda: [main.destroy()])
-BTNAI.pack()
-BTNMU.pack()
+BTNAI = tk.Button(text = "AI", font=("Courier", 40, "italic"), command= lambda: [main.destroy()])
+BTNMU = tk.Button(text = "MULTI", font=("Courier", 40, "italic"), command = lambda: [main.destroy()])
+BTNAI.place(x=248, y=250)
+BTNMU.place(x=200, y=400)
 main.mainloop()
 
 theChessBoard =tk.Tk()
