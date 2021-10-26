@@ -156,9 +156,18 @@ def Change(Piece_name,x,y):
             elif ChessPiece.Chess_Piece_Board[x][y][0] == "":
                 ResetBoard()
             elif ChessPiece.Chess_Available_Move_Board[x][y] == "Attack": #When Attack the Black Piece
+                Check = ChessPiece.Chess_Piece_Board[x][y]
                 Move.Turn = 1
                 Move.Move(Move.Saved,x,y)
                 ResetBoard()
+                if  Check == "B1King":
+                    theChessBoard.destroy()
+                    Over =tk.Tk()
+                    Over.title("GameOver")
+                    label=tk.Label(Over, text="White Won", width=10, height=5, fg="black", relief="solid")
+                    label.pack()
+                    Over.mainloop          
+                        
         except IndexError as e:
             if ChessPiece.Chess_Available_Move_Board[x][y] != "":
                 if ChessPiece.Chess_Available_Move_Board[x][y] != "":
@@ -177,9 +186,17 @@ def Change(Piece_name,x,y):
             elif ChessPiece.Chess_Piece_Board[x][y][0] == "":
                 ResetBoard()
             elif ChessPiece.Chess_Available_Move_Board[x][y] == "Attack": #When Attack the White Piece
+                Check = ChessPiece.Chess_Piece_Board[x][y]
                 Move.Turn = 0
                 Move.Move(Move.Saved,x,y)
                 ResetBoard()
+                if  Check == "W1King":
+                    theChessBoard.destroy()
+                    Over =tk.Tk()
+                    Over.title("GameOver")
+                    label=tk.Label(Over, text="Black Won", width=10, height=5, fg="black", relief="solid")
+                    label.pack()
+                    Over.mainloop     
         except IndexError as e:
             if ChessPiece.Chess_Available_Move_Board[x][y] != "":
                 if ChessPiece.Chess_Available_Move_Board[x][y] != "":
@@ -191,6 +208,7 @@ def Change(Piece_name,x,y):
                 ResetBoard()
     MakeBoard()
     Move.Saved = Piece_name
+
 
 #On strat make Board
 ResetBoard()

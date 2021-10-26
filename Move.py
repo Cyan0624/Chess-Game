@@ -1,4 +1,6 @@
 from ChessPiece import Chess_Available_Move_Board, Chess_Piece_Board
+import tkinter as tk
+
 
 def Move(Piece_Name, x,y):
     if Chess_Available_Move_Board[x][y] == "Move" or Chess_Available_Move_Board[x][y] == "Attack":
@@ -11,6 +13,6 @@ def Move(Piece_Name, x,y):
                     pass
         Chess_Piece_Board[x][y] = Piece_Name
     else:
-        pass
+        pass   
 Turn = 0
 Saved = "" 
