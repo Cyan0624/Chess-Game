@@ -23,6 +23,7 @@ canvas = tk.Canvas(
 canvas.place(x = 0, y = 0)
 
 background_img = ImageTk.PhotoImage(Image.open("CT1.jpg").resize((608,608), Image.ANTIALIAS))
+#CT1은 CHESS문구 있는 버전, CT는 CHESS문구가 없는 버전
 background = canvas.create_image(
     304, 304,
     image=background_img)
